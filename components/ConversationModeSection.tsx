@@ -45,7 +45,11 @@ export const ConversationModeSection: React.FC<ConversationModeSectionProps> = (
              <div className="relative w-full bg-gray-900 rounded-[2rem] border border-gray-800 shadow-2xl overflow-hidden">
                 {/* Chat Header */}
                 <div className="bg-gray-800/50 p-4 border-b border-gray-700 flex items-center gap-3">
-                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-purple-500"></div>
+                   <img 
+                      src="https://c.tenor.com/e1Csmb03eysAAAAd/tenor.gif" 
+                      alt="Profile" 
+                      className="w-10 h-10 rounded-full object-cover"
+                   />
                    <div>
                       <div className="h-2.5 w-24 bg-gray-700 rounded-full mb-1"></div>
                       <div className="h-2 w-16 bg-gray-700/50 rounded-full"></div>

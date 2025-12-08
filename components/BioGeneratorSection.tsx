@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Target, MessageCircle } from 'lucide-react';
 
@@ -57,9 +58,11 @@ export const BioGeneratorSection: React.FC<BioGeneratorSectionProps> = ({ onCtaC
 
                   {/* Reaction/Reply */}
                   <div className="flex items-end justify-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-xs font-bold text-pink-500">
-                         S
-                      </div>
+                      <img 
+                        src="https://c.tenor.com/r-acShkJxuoAAAAd/tenor.gif" 
+                        alt="Profile" 
+                        className="w-8 h-8 rounded-full object-cover border border-pink-100"
+                      />
                       <div className="space-y-1 max-w-[85%]">
                           <div className="bg-gray-100 text-slate-800 p-4 rounded-2xl rounded-bl-sm shadow-sm">
                               <p className="font-medium">Hahaha you wish! 🤣</p>

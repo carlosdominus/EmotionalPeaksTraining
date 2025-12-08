@@ -1,7 +1,31 @@
+
 import React from 'react';
 import { Heart, Target, Thermometer, Snowflake, Tent, Video, Bot, Camera, Flame, Box } from 'lucide-react';
 
 const features = [
+  // Bonuses - Moved to top
+  {
+    icon: <Bot size={28} className="text-yellow-500" />,
+    title: "Date Chat AI",
+    description: "AI tool that generates perfect messages with emotional spikes for any situation - never send boring texts again",
+    badge: "BONUS",
+    image: "https://i.ibb.co/Pv6YZM5K/CHATDATE-v3.webp"
+  },
+  {
+    icon: <Camera size={28} className="text-orange-500" />,
+    title: "Attractive Instagram",
+    description: "The 3 photos that create a 'boomerang effect' making women check your profile multiple times per day",
+    badge: "BONUS",
+    image: "https://i.ibb.co/xttRFLJW/Magnetic-Profile-Method.webp"
+  },
+  {
+    icon: <Flame size={28} className="text-red-500 fill-red-500/10" />,
+    title: "Perfect Sex Map",
+    description: "Techniques to have unforgettable sex and make her obsessed with you after the first night",
+    badge: "BONUS",
+    image: "https://i.ibb.co/SwF2F5Vg/sexmap.webp"
+  },
+  // Standard Features
   {
     icon: <Heart size={28} className="text-pink-500 fill-pink-500/10" />,
     title: "Flirting Technique",
@@ -37,25 +61,6 @@ const features = [
     title: "Real Street Approaches",
     description: "Watch real demonstrations of the method in action with beautiful women and see the exact moment they become interested",
     badge: null
-  },
-  // Bonuses
-  {
-    icon: <Bot size={28} className="text-yellow-500" />,
-    title: "Date Chat AI",
-    description: "AI tool that generates perfect messages with emotional spikes for any situation - never send boring texts again",
-    badge: "BONUS"
-  },
-  {
-    icon: <Camera size={28} className="text-orange-500" />,
-    title: "Attractive Instagram",
-    description: "The 3 photos that create a 'boomerang effect' making women check your profile multiple times per day",
-    badge: "BONUS"
-  },
-  {
-    icon: <Flame size={28} className="text-red-500 fill-red-500/10" />,
-    title: "Perfect Sex Map",
-    description: "Techniques to have unforgettable sex and make her obsessed with you after the first night",
-    badge: "BONUS"
   }
 ];
 
@@ -91,25 +96,46 @@ export const FeaturesGridSection: React.FC = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`group bg-white p-8 rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden ${feature.badge ? 'border-blue-200 ring-1 ring-blue-100' : 'border-slate-100 shadow-sm'}`}
+              className={`group bg-white rounded-2xl border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden flex flex-col ${feature.badge ? 'border-blue-200 ring-1 ring-blue-100' : 'border-slate-100 shadow-sm'}`}
             >
-              {feature.badge && (
-                <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                  {feature.badge}
+              {/* Image Header (If present) */}
+              {feature.image && (
+                <div className="relative aspect-square overflow-hidden border-b border-slate-100">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Badge on Image */}
+                  {feature.badge && (
+                    <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm z-10">
+                      {feature.badge}
+                    </div>
+                  )}
                 </div>
               )}
-              
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-bold text-[#323140] leading-tight">
-                  {feature.title}
-                </h3>
+
+              {/* Card Content */}
+              <div className="p-8 flex-1 flex flex-col">
+                  {/* Badge for Non-Image cards */}
+                  {!feature.image && feature.badge && (
+                    <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                      {feature.badge}
+                    </div>
+                  )}
+                  
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors shrink-0">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#323140] leading-tight">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="text-slate-500 leading-relaxed font-medium text-sm">
+                    {feature.description}
+                  </p>
               </div>
-              <p className="text-slate-500 leading-relaxed font-medium text-sm">
-                {feature.description}
-              </p>
             </div>
           ))}
         </div>
