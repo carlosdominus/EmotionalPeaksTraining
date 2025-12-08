@@ -126,54 +126,54 @@ export default function App() {
                 </div>
 
                 {/* Right Column: Visual Mockup */}
-                <div className="relative w-full max-w-[400px] mx-auto lg:ml-auto h-[600px] lg:h-[700px] flex items-center justify-center">
+                <div className="relative w-full max-w-[400px] mx-auto lg:ml-auto flex items-center justify-center">
                   
-                  {/* Phone Frame Mockup */}
-                  <div className="relative w-full h-full bg-gradient-to-b from-gray-800 to-black rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden z-0">
-                    {/* Screen Content */}
-                    <div className="absolute inset-0 bg-[#1a1a1a]">
-                      <img 
-                        src="https://i.ibb.co/DTvB3wQ/q1e-I1kv0-JShx-XFI5f-INuu-GPUQE-1-2.webp" 
-                        alt="App Interface" 
-                        className="w-full h-full object-cover opacity-80"
-                      />
-                      
-                      {/* Gradient Overlay at bottom of phone */}
-                      <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  {/* Tenor GIF Embed Container */}
+                  <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-2xl z-0 border-4 border-gray-900/50">
+                    <div 
+                      className="tenor-gif-embed" 
+                      data-postid="12600428547893134085" 
+                      data-share-method="host" 
+                      data-aspect-ratio="1" 
+                      data-width="100%"
+                    >
+                      <a href="https://tenor.com/view/sabrina-carpenter-sabrina-carpenter-snl-sabrina-snl-bite-lip-flirt-gif-12600428547893134085">
+                        Sabrina Carpenter Sabrina Carpenter Snl GIF
+                      </a> from <a href="https://tenor.com/search/sabrina+carpenter-gifs">Sabrina Carpenter GIFs</a>
                     </div>
                   </div>
 
                   {/* Floating Chat Bubbles - Stacked and Centered */}
                   
                   {/* Bubble 1: Top of stack */}
-                  <div className="absolute bottom-[110px] left-1/2 -translate-x-1/2 w-full max-w-[280px] z-10">
+                  <div className="absolute bottom-[20%] right-[-10%] w-full max-w-[280px] z-10">
                     <FloatingBubble 
-                      text="I was going to say you look beautiful, but one thing worried me...🤔"
+                      text="I had to come say hi... you're stunning 😏"
                       className="w-full animate-float"
                       delay={0}
                     />
                   </div>
 
                   {/* Bubble 2: Middle of stack */}
-                  <div className="absolute bottom-[25px] left-1/2 -translate-x-1/2 w-full max-w-[280px] z-10">
+                  <div className="absolute bottom-[5%] left-[-5%] w-full max-w-[280px] z-10">
                     <FloatingBubble 
-                      text="If Hollywood catches fire again, I know who to blame 🔥👀"
+                      text="But I bet you're trouble... I can tell by that smile 🤔"
                       className="w-full animate-float-delayed"
                       delay={2}
                     />
                   </div>
 
                   {/* Bubble 3: Bottom of stack */}
-                  <div className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-full max-w-[280px] z-10">
+                  <div className="absolute bottom-[-15%] right-[5%] w-full max-w-[280px] z-10">
                     <FloatingBubble 
-                      text="Are you there for sightseeing or to steal a famous actress's job? 👀"
+                      text="Are you always this confident or is today special? 😂"
                       className="w-full animate-float-slow"
                       delay={4}
                     />
                   </div>
 
-                  {/* Decorative Elements behind phone */}
-                  <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-blue-600/20 blur-[100px] rounded-full"></div>
+                  {/* Decorative Elements behind */}
+                  <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/20 blur-[100px] rounded-full"></div>
                 </div>
 
               </div>
