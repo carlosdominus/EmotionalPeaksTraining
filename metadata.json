@@ -1,0 +1,5 @@
+{
+  "name": "PICOS DE EMOÇÃO",
+  "description": "A React implementation of the ChatDate landing page with functional AI analysis for Instagram story replies using Google Gemini.",
+  "requestFramePermissions": []
+}
