@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Thermometer } from 'lucide-react';
 
@@ -50,49 +51,52 @@ export const ConversationThermometerSection: React.FC<ConversationThermometerSec
            {/* Image Container */}
            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900 aspect-[4/3] md:aspect-[16/9]">
               <img 
-                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2574&auto=format&fit=crop" 
+                 src="https://c.tenor.com/NDtgQabmRjEAAAAd/tenor.gif" 
                  alt="Woman showing attraction signals" 
-                 className="w-full h-full object-cover opacity-80"
+                 className="w-full h-full object-cover opacity-90"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+           </div>
 
-              {/* Indicators Overlay */}
+           {/* Analysis Containers - Below GIF */}
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
               
               {/* Indicator 1: Hair */}
-              <div className="absolute top-[20%] right-[35%] md:right-[30%] flex items-center gap-3 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-                  <div className="relative">
-                      <div className="w-4 h-4 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
-                      <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+                  <div className="relative shrink-0">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
                   </div>
-                  <div className="bg-black/60 backdrop-blur-md border border-green-500/50 px-4 py-2 rounded-xl">
-                      <p className="text-green-300 text-xs font-bold uppercase tracking-wider">High Interest</p>
+                  <div className="flex flex-col">
+                      <p className="text-green-400 text-xs font-bold uppercase tracking-wider mb-1">High Interest</p>
                       <p className="text-white text-sm font-semibold">Touching hair</p>
                   </div>
               </div>
 
               {/* Indicator 2: Eyes */}
-              <div className="absolute top-[35%] left-[45%] flex flex-row-reverse items-center gap-3 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-                  <div className="relative">
-                      <div className="w-4 h-4 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
-                      <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+                  <div className="relative shrink-0">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
                   </div>
-                  <div className="bg-black/60 backdrop-blur-md border border-green-500/50 px-4 py-2 rounded-xl text-right">
-                      <p className="text-green-300 text-xs font-bold uppercase tracking-wider">Connection</p>
+                  <div className="flex flex-col">
+                      <p className="text-green-400 text-xs font-bold uppercase tracking-wider mb-1">Connection</p>
                       <p className="text-white text-sm font-semibold">Prolonged eye contact</p>
                   </div>
               </div>
 
-              {/* Indicator 3: Neck/Postur (Generic placement) */}
-              <div className="absolute bottom-[20%] left-[30%] flex flex-col items-center gap-2 animate-fade-in-up" style={{animationDelay: '1s'}}>
-                  <div className="relative">
-                      <div className="w-4 h-4 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
-                      <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
+              {/* Indicator 3: Neck/Posture */}
+              <div className="bg-white/5 border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/10 transition-colors">
+                  <div className="relative shrink-0">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
                   </div>
-                  <div className="bg-black/60 backdrop-blur-md border border-green-500/50 px-4 py-2 rounded-xl text-center">
-                      <p className="text-green-300 text-xs font-bold uppercase tracking-wider">Openness</p>
+                  <div className="flex flex-col">
+                      <p className="text-green-400 text-xs font-bold uppercase tracking-wider mb-1">Openness</p>
                       <p className="text-white text-sm font-semibold">Exposed neck / Smiling</p>
                   </div>
               </div>
+              
            </div>
         </div>
 

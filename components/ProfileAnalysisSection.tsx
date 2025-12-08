@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Video, Play } from 'lucide-react';
+import { Video } from 'lucide-react';
 
 interface ProfileAnalysisSectionProps {
   onCtaClick: () => void;
@@ -52,22 +53,15 @@ export const ProfileAnalysisSection: React.FC<ProfileAnalysisSectionProps> = ({ 
             
             {/* Main Container */}
             <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-900 border border-white/10 shadow-2xl">
-                {/* Thumbnail Image */}
+                {/* Thumbnail GIF */}
                 <img 
-                  src="https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=2574&auto=format&fit=crop" 
-                  alt="Real approach video thumbnail" 
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                  src="https://c.tenor.com/Z28js5TTM2UAAAAd/tenor.gif" 
+                  alt="Real approach interaction" 
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                 />
                 
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-black/40"></div>
-
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                      <Play size={32} className="text-white fill-white translate-x-1" />
-                   </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
                 {/* Overlay Text */}
                 <div className="absolute bottom-6 left-6 right-6">

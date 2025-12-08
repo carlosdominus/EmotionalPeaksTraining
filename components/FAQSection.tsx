@@ -4,24 +4,24 @@ import { Plus, Minus, HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
-    question: "How does ChatDate exactly work?",
-    answer: "ChatDate uses advanced AI models to analyze your screenshots (Tinder bios, Instagram stories, WhatsApp chats) and generates context-aware, engaging replies or openers tailored to the specific situation."
+    question: "What exactly is the Emotional Spikes Method?",
+    answer: "It is a comprehensive digital training system that teaches you how to trigger intense attraction in women using specific psychological formulas. By mixing Flirting (Pull) and Teasing (Push), you create a dopamine-fueled 'emotional rollercoaster' that makes you unforgettable."
   },
   {
-    question: "Does it work for any dating app?",
-    answer: "Yes! While optimized for Instagram, Tinder, Bumble, and Hinge, you can use ChatDate for any messaging platform. Just upload a screenshot of the context, and we'll handle the rest."
+    question: "Do I need to be good looking or rich for this to work?",
+    answer: "Not at all. The method relies on evolutionary psychology and emotional triggers, not your looks or bank account. It is specifically designed to give 'average' guys an unfair advantage by mastering the art of emotional communication that most men lack."
   },
   {
-    question: "Is my payment information secure?",
-    answer: "Absolutely. We use industry-standard encryption and trusted payment processors. We do not store your credit card details."
+    question: "Will this work on dating apps like Tinder and Hinge?",
+    answer: "Yes. The training includes the 'Anti-Freeze Manual' and specific modules for Online Game. You will learn how to adapt the Emotional Spikes into text messages that stand out from the hundreds of boring 'Hey, how are you?' messages she receives daily."
   },
   {
-    question: "Can I cancel my subscription?",
-    answer: "Yes, you can cancel your subscription at any time directly through your account settings or by contacting our support team. No hidden fees or lock-in contracts."
+    question: "How is the content delivered?",
+    answer: "You get instant digital access to the member's area immediately after purchase. You can watch the HD video lessons, read the manuals, and access the bonuses on your phone, computer, or tablet from anywhere in the world."
   },
   {
-    question: "Does it support languages other than English?",
-    answer: "Yes, ChatDate supports multiple languages. The AI automatically detects the language in your screenshot and can generate replies in that language or English, depending on your preference."
+    question: "What if it doesn't work for me?",
+    answer: "We offer a 15-day unconditional money-back guarantee. Go through the training, use the lines, and test the method. If you don't see a massive change in how women react to you, simply email us and we'll refund 100% of your money. No questions asked."
   }
 ];
 
