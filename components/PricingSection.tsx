@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, ShieldCheck, Flame, MessageCircle } from 'lucide-react';
+import { Check, ShieldCheck, Flame, Zap } from 'lucide-react';
 
 interface PricingSectionProps {
   onCtaClick?: () => void;
@@ -8,13 +8,13 @@ interface PricingSectionProps {
 
 export const PricingSection: React.FC<PricingSectionProps> = () => {
   const features = [
-    "Access to all features",
-    "Mastering ChatDate Course",
-    "Seductive Tinder Template",
-    "Irresistible Instagram Checklist",
-    "Monthly Hotseats",
-    "The Social Circle",
-    "Exclusive Support"
+    "Complete Emotional Spikes System",
+    "Anti-Freeze Manual",
+    "Flirting & Teasing Modules",
+    "Bonus: Date Chat AI",
+    "Bonus: Perfect Sex Map",
+    "Bonus: Magnetic Instagram",
+    "Access to Private Community"
   ];
 
   return (
@@ -28,7 +28,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
         
         {/* Header */}
         <div className="flex flex-col items-center mb-16 text-center space-y-2">
-          <h3 className="text-lg font-bold text-gray-200 uppercase tracking-wider">ChatDate</h3>
+          <h3 className="text-lg font-bold text-gray-200 uppercase tracking-wider">Emotional Spikes Method</h3>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.1]">
             <span className="bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
               Choose Your Plan:
@@ -41,18 +41,12 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
           
           {/* Global Plan (Dark Card) */}
           <div className="relative group rounded-[2.5rem] overflow-hidden border border-blue-500/30 bg-[#0A0B14] shadow-2xl flex flex-col hover:border-blue-500/50 transition-colors duration-300">
-            <div className="h-48 overflow-hidden relative">
+            <div className="relative w-full">
               <img 
-                src="https://i.ibb.co/1Yhkk62g/bannerzinho.avif" 
-                alt="ChatDate Global" 
-                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                src="https://i.ibb.co/n8RdMyrz/Emotional-Spikes-Method.webp" 
+                alt="Emotional Spikes Method" 
+                className="w-full h-auto object-cover opacity-100 group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B14] to-transparent"></div>
-              <div className="absolute bottom-4 left-0 w-full text-center">
-                <h3 className="text-xl font-bold text-white mb-1">ChatDate Global</h3>
-                <p className="text-sm font-semibold text-white/70">Works in all languages</p>
-                <p className="text-sm font-semibold text-white/70">Ideal if you live abroad or travel</p>
-              </div>
             </div>
 
             <div className="p-8 pt-4 flex-1 flex flex-col">
@@ -121,7 +115,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                {/* Center Badge */}
                <div className="absolute inset-0 m-auto w-24 h-24 rounded-full bg-gradient-to-b from-[#1e40af] to-[#0f172a] shadow-[0_0_40px_rgba(30,64,175,0.6)] border border-blue-400/30 flex items-center justify-center z-10">
                    <div className="relative transform translate-y-1">
-                      <MessageCircle size={44} className="text-blue-300 fill-blue-500/10" strokeWidth={2.5} />
+                      <Zap size={44} className="text-blue-300 fill-blue-500/10" strokeWidth={2.5} />
                       <Flame size={20} className="text-blue-100 fill-blue-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%]" />
                    </div>
                </div>
@@ -140,7 +134,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
 
             {/* Description */}
             <p className="text-base text-slate-400 font-medium leading-relaxed max-w-xl mx-auto">
-               <strong className="text-white block md:inline">Try ChatDate for 15 days risk-free,</strong>{" "}
+               <strong className="text-white block md:inline">Try the Emotional Spikes Method for 15 days risk-free,</strong>{" "}
                if you don't like it we'll refund 100% of your investment
             </p>
 

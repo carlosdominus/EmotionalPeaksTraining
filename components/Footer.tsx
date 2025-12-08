@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Zap } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -9,17 +9,15 @@ export const Footer = () => {
           
           {/* Brand */}
           <div className="flex items-center space-x-3">
-            <img 
-              src="https://i.ibb.co/gbd5x4pr/logo.webp" 
-              alt="ChatDate Logo" 
-              className="w-8 h-8 object-cover rounded-xl grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all"
-            />
-            <span className="font-bold text-gray-400 tracking-tight text-lg">ChatDate</span>
+            <div className="p-2 bg-blue-600/10 rounded-xl border border-blue-600/20">
+              <Zap className="w-5 h-5 text-blue-500" strokeWidth={2.5} fill="currentColor" />
+            </div>
+            <span className="font-bold text-gray-200 tracking-tight text-lg">Emotional Spikes Method</span>
           </div>
 
           {/* Copyright */}
           <div className="text-gray-600 text-sm font-medium">
-            © {new Date().getFullYear()} ChatDate. All rights reserved.
+            © {new Date().getFullYear()} Emotional Spikes Method. All rights reserved.
           </div>
 
           {/* Links */}
