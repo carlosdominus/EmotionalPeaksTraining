@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Upload } from 'lucide-react';
 import { analyzeStoryImage } from './services/geminiService';
@@ -81,18 +82,19 @@ export default function App() {
 
         {/* HERO SECTION - Always Visible */}
         <div className="animate-fade-in">
-          <section className="relative min-h-screen flex flex-col justify-center animate-fade-in-up">
+          {/* Added extra padding-bottom (py-32 instead of py-24) to increase section size */}
+          <section className="relative min-h-screen flex flex-col justify-center animate-fade-in-up py-32 lg:py-40">
             {/* Main Container */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-24">
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
               
               {/* Header Logo */}
-              <div className="flex justify-center mb-12 animate-fade-in-down">
+              <div className="flex justify-center mb-16 animate-fade-in-down">
                 <div className="flex items-center space-x-3">
                   <span className="font-bold text-gray-200 tracking-tight text-xl">Emotional Spikes Method</span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 
                 {/* Left Column: Text Content */}
                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-xl mx-auto lg:mx-0">
@@ -125,50 +127,39 @@ export default function App() {
                   />
                 </div>
 
-                {/* Right Column: Visual Mockup */}
-                <div className="relative w-full max-w-[400px] mx-auto lg:ml-auto flex items-center justify-center">
+                {/* Right Column: Visual Mockup + Stacked Messages */}
+                <div className="relative w-full max-w-[400px] mx-auto lg:ml-auto flex flex-col items-center gap-6">
                   
-                  {/* Tenor GIF Embed Container */}
+                  {/* Clean GIF Container - Using direct img to remove Tenor UI */}
                   <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-2xl z-0 border-4 border-gray-900/50">
-                    <div 
-                      className="tenor-gif-embed" 
-                      data-postid="12600428547893134085" 
-                      data-share-method="host" 
-                      data-aspect-ratio="1" 
-                      data-width="100%"
-                    >
-                      <a href="https://tenor.com/view/sabrina-carpenter-sabrina-carpenter-snl-sabrina-snl-bite-lip-flirt-gif-12600428547893134085">
-                        Sabrina Carpenter Sabrina Carpenter Snl GIF
-                      </a> from <a href="https://tenor.com/search/sabrina+carpenter-gifs">Sabrina Carpenter GIFs</a>
-                    </div>
+                    <img 
+                      src="https://media1.tenor.com/m/tHjn_s9-y_EAAAAC/sabrina-carpenter-sabrina-carpenter-snl.gif" 
+                      alt="Sabrina Carpenter Flirting"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
-                  {/* Floating Chat Bubbles - Stacked and Centered */}
-                  
-                  {/* Bubble 1: Top of stack */}
-                  <div className="absolute bottom-[20%] right-[-10%] w-full max-w-[280px] z-10">
+                  {/* Message Bubbles - Stacked Below */}
+                  <div className="w-full space-y-3">
                     <FloatingBubble 
+                      label="FLIRTING • Positive Spike"
+                      labelColor="text-green-300"
                       text="I had to come say hi... you're stunning 😏"
-                      className="w-full animate-float"
-                      delay={0}
+                      className="w-full"
                     />
-                  </div>
 
-                  {/* Bubble 2: Middle of stack */}
-                  <div className="absolute bottom-[5%] left-[-5%] w-full max-w-[280px] z-10">
                     <FloatingBubble 
+                      label="TEASING • Negative Spike"
+                      labelColor="text-orange-300"
                       text="But I bet you're trouble... I can tell by that smile 🤔"
-                      className="w-full animate-float-delayed"
-                      delay={2}
+                      className="w-full"
                     />
-                  </div>
 
-                  {/* Bubble 3: Bottom of stack */}
-                  <div className="absolute bottom-[-15%] right-[5%] w-full max-w-[280px] z-10">
                     <FloatingBubble 
+                      label="TEASING • Negative Spike"
+                      labelColor="text-orange-300"
                       text="Are you always this confident or is today special? 😂"
-                      className="w-full animate-float-slow"
-                      delay={4}
+                      className="w-full"
                     />
                   </div>
 
