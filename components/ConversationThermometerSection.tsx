@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gauge } from 'lucide-react';
+import { Thermometer } from 'lucide-react';
 
 interface ConversationThermometerSectionProps {
   onCtaClick: () => void;
@@ -8,73 +8,93 @@ interface ConversationThermometerSectionProps {
 export const ConversationThermometerSection: React.FC<ConversationThermometerSectionProps> = ({ onCtaClick }) => {
   return (
     <section className="py-24 bg-[#050505] relative overflow-hidden">
-      {/* Background Gradients/Images */}
+      {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-         {/* Subtle colored glows matching the design vibe */}
-         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
-         <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
+         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[120px]"></div>
+         <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center">
         
-        {/* Text Content - Centered */}
-        <div className="flex flex-col items-center text-center max-w-3xl space-y-8 mb-16">
-             {/* Badge */}
-             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#78BBFF] shadow-[0_0_0_1px_rgba(120,187,255,0.2)] bg-transparent">
-                <Gauge className="w-5 h-5 text-[#78BBFF]" />
-                <span className="text-sm font-bold text-[#78BBFF] tracking-wide">Conversation Thermometer</span>
-             </div>
+        {/* Header Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 shadow-[0_0_0_1px_rgba(34,197,94,0.1)] mb-8">
+           <Thermometer className="w-5 h-5 text-green-500" />
+           <span className="text-sm font-bold text-green-500 tracking-wide">Emotional Thermometer</span>
+        </div>
 
-             {/* Heading */}
-             <div className="space-y-2">
-               <h2 className="text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight">
-                  <span className="bg-gradient-to-br from-[#EEE] to-[#94B4FF] bg-clip-text text-transparent block">
-                      Is she interested or just being nice?
+        {/* Text Content */}
+        <div className="flex flex-col items-center text-center max-w-4xl space-y-6 mb-16">
+             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
+                  <span className="text-white block">
+                      Is she attracted or just being polite?
                   </span>
-               </h2>
-               <h2 className="text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight">
-                  <span className="bg-gradient-to-br from-[#EEE] to-[#94B4FF] bg-clip-text text-transparent block">
+                  <span className="bg-gradient-to-r from-green-300 to-emerald-500 bg-clip-text text-transparent block mt-2">
                        Never be in doubt again...
                   </span>
-               </h2>
-             </div>
+             </h2>
 
-             {/* Description */}
-             <div className="space-y-1">
-               <p className="text-base text-[#B0B5BE] font-medium leading-relaxed max-w-lg mx-auto">
-                  ChatDate features a real-time conversation thermometer.
-               </p>
-               <p className="text-base text-[#B0B5BE] font-medium leading-relaxed max-w-lg mx-auto">
-                  Telling you if it's time to heat things up or tone it down.
-               </p>
-             </div>
+             <p className="text-lg text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto">
+                The Emotional Spikes Method teaches you how to read her body language in real-time. Know exactly when to escalate, when to pull back, and when to go for the kiss.
+             </p>
 
-             {/* CTA */}
              <button 
                 onClick={onCtaClick}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] active:scale-95 mt-4"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-500 rounded-full text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.4)] active:scale-95 mt-4"
               >
                 Master The Method Now
               </button>
-          </div>
+        </div>
 
-          {/* Image Container - Fixed Dimensions as requested */}
-          <div className="relative w-[300px] h-[400px] shrink-0 group">
-              {/* Background Glow specific to image */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/20 blur-[60px] rounded-full pointer-events-none"></div>
+        {/* Visual: Woman with Indicators */}
+        <div className="relative w-full max-w-4xl mx-auto">
+           {/* Image Container */}
+           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900 aspect-[4/3] md:aspect-[16/9]">
+              <img 
+                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2574&auto=format&fit=crop" 
+                 alt="Woman showing attraction signals" 
+                 className="w-full h-full object-cover opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+              {/* Indicators Overlay */}
               
-              {/* Cropped Container */}
-              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-gray-900/50">
-                  <img 
-                      src="https://i.ibb.co/qLzQ55yn/conversa-nozap.webp" 
-                      alt="Thermometer Feature Interface" 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  
-                  {/* Optional: Inner shadow overlay for depth */}
-                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2.5rem] pointer-events-none"></div>
+              {/* Indicator 1: Hair */}
+              <div className="absolute top-[20%] right-[35%] md:right-[30%] flex items-center gap-3 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                  <div className="relative">
+                      <div className="w-4 h-4 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
+                      <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
+                  </div>
+                  <div className="bg-black/60 backdrop-blur-md border border-green-500/50 px-4 py-2 rounded-xl">
+                      <p className="text-green-300 text-xs font-bold uppercase tracking-wider">High Interest</p>
+                      <p className="text-white text-sm font-semibold">Touching hair</p>
+                  </div>
               </div>
-          </div>
+
+              {/* Indicator 2: Eyes */}
+              <div className="absolute top-[35%] left-[45%] flex flex-row-reverse items-center gap-3 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+                  <div className="relative">
+                      <div className="w-4 h-4 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
+                      <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
+                  </div>
+                  <div className="bg-black/60 backdrop-blur-md border border-green-500/50 px-4 py-2 rounded-xl text-right">
+                      <p className="text-green-300 text-xs font-bold uppercase tracking-wider">Connection</p>
+                      <p className="text-white text-sm font-semibold">Prolonged eye contact</p>
+                  </div>
+              </div>
+
+              {/* Indicator 3: Neck/Postur (Generic placement) */}
+              <div className="absolute bottom-[20%] left-[30%] flex flex-col items-center gap-2 animate-fade-in-up" style={{animationDelay: '1s'}}>
+                  <div className="relative">
+                      <div className="w-4 h-4 bg-green-500 rounded-full animate-ping absolute inset-0 opacity-75"></div>
+                      <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white relative z-10"></div>
+                  </div>
+                  <div className="bg-black/60 backdrop-blur-md border border-green-500/50 px-4 py-2 rounded-xl text-center">
+                      <p className="text-green-300 text-xs font-bold uppercase tracking-wider">Openness</p>
+                      <p className="text-white text-sm font-semibold">Exposed neck / Smiling</p>
+                  </div>
+              </div>
+           </div>
+        </div>
 
       </div>
     </section>
