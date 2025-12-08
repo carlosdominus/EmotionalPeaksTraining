@@ -81,21 +81,21 @@ export default function App() {
 
         {/* HERO SECTION - Always Visible */}
         <div className="animate-fade-in">
-          <section className="relative min-h-screen flex flex-col justify-center animate-fade-in-up">
+          <section className="relative flex flex-col justify-center animate-fade-in-up pt-20 pb-16 lg:pt-32 lg:pb-24">
             {/* Main Container */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-24">
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
               
               {/* Header Logo */}
-              <div className="flex justify-center mb-12 animate-fade-in-down">
+              <div className="flex justify-center mb-10 animate-fade-in-down">
                 <div className="flex items-center space-x-3">
                   <span className="font-bold text-gray-200 tracking-tight text-xl">Emotional Spikes Method</span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 {/* Left Column: Text Content */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-xl mx-auto lg:mx-0">
+                <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 max-w-xl mx-auto lg:mx-0">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
                       Tired of being ignored by women?
@@ -106,7 +106,7 @@ export default function App() {
                     Learn how to create emotional spikes that make any woman addicted to you in less than 5 minutes - even if you're shy, ugly or broke.
                   </p>
 
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <button 
                       onClick={handleButtonClick}
                       className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] active:scale-95"
@@ -126,50 +126,42 @@ export default function App() {
                 </div>
 
                 {/* Right Column: Visual Mockup */}
-                <div className="relative w-full max-w-[400px] mx-auto lg:ml-auto flex items-center justify-center">
+                <div className="relative w-full max-w-[400px] mx-auto lg:ml-auto flex flex-col items-center justify-center gap-6">
                   
                   {/* Tenor GIF Embed Container */}
                   <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-2xl z-0 border-4 border-gray-900/50">
-                    <div 
-                      className="tenor-gif-embed" 
-                      data-postid="12600428547893134085" 
-                      data-share-method="host" 
-                      data-aspect-ratio="1" 
-                      data-width="100%"
-                    >
-                      <a href="https://tenor.com/view/sabrina-carpenter-sabrina-carpenter-snl-sabrina-snl-bite-lip-flirt-gif-12600428547893134085">
-                        Sabrina Carpenter Sabrina Carpenter Snl GIF
-                      </a> from <a href="https://tenor.com/search/sabrina+carpenter-gifs">Sabrina Carpenter GIFs</a>
+                    <img 
+                      src="https://c.tenor.com/rt23AR7cgwUAAAAd/tenor.gif" 
+                      alt="Sabrina Carpenter Flirting GIF" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Floating Chat Bubbles - Stacked and Centered Below */}
+                  <div className="w-full flex flex-col items-center space-y-3">
+                    <div className="w-full max-w-[280px]">
+                        <FloatingBubble 
+                        text="I had to come say hi... you're stunning 😏"
+                        className="w-full animate-float"
+                        delay={0}
+                        />
                     </div>
-                  </div>
+                    
+                    <div className="w-full max-w-[280px]">
+                        <FloatingBubble 
+                        text="But I bet you're trouble... I can tell by that smile 🤔"
+                        className="w-full animate-float-delayed"
+                        delay={2}
+                        />
+                    </div>
 
-                  {/* Floating Chat Bubbles - Stacked and Centered */}
-                  
-                  {/* Bubble 1: Top of stack */}
-                  <div className="absolute bottom-[20%] right-[-10%] w-full max-w-[280px] z-10">
-                    <FloatingBubble 
-                      text="I had to come say hi... you're stunning 😏"
-                      className="w-full animate-float"
-                      delay={0}
-                    />
-                  </div>
-
-                  {/* Bubble 2: Middle of stack */}
-                  <div className="absolute bottom-[5%] left-[-5%] w-full max-w-[280px] z-10">
-                    <FloatingBubble 
-                      text="But I bet you're trouble... I can tell by that smile 🤔"
-                      className="w-full animate-float-delayed"
-                      delay={2}
-                    />
-                  </div>
-
-                  {/* Bubble 3: Bottom of stack */}
-                  <div className="absolute bottom-[-15%] right-[5%] w-full max-w-[280px] z-10">
-                    <FloatingBubble 
-                      text="Are you always this confident or is today special? 😂"
-                      className="w-full animate-float-slow"
-                      delay={4}
-                    />
+                    <div className="w-full max-w-[280px]">
+                        <FloatingBubble 
+                        text="Are you always this confident or is today special? 😂"
+                        className="w-full animate-float-slow"
+                        delay={4}
+                        />
+                    </div>
                   </div>
 
                   {/* Decorative Elements behind */}
