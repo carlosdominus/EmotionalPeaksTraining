@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MessageSquareText } from 'lucide-react';
 
@@ -39,7 +38,7 @@ export const ApproachModeSection: React.FC<ApproachModeSectionProps> = ({ onCtaC
            onClick={onCtaClick}
            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.4)] active:scale-95 mb-8"
          >
-           Try It Now
+           Master The Method Now
         </button>
  
         {/* Visuals Container */}

@@ -88,12 +88,7 @@ export default function App() {
               {/* Header Logo */}
               <div className="flex justify-center mb-12 animate-fade-in-down">
                 <div className="flex items-center space-x-3">
-                  <img 
-                    src="https://i.ibb.co/gbd5x4pr/logo.webp" 
-                    alt="ChatDate Logo" 
-                    className="w-8 h-8 object-cover rounded-xl"
-                  />
-                  <span className="font-bold text-gray-200 tracking-tight text-xl">ChatDate</span>
+                  <span className="font-bold text-gray-200 tracking-tight text-xl">Emotional Spikes Method</span>
                 </div>
               </div>
 
@@ -103,12 +98,12 @@ export default function App() {
                 <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-xl mx-auto lg:mx-0">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                     <span className="bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
-                      Stuck on what to reply to her story?
+                      Tired of being ignored by women?
                     </span>
                   </h1>
                   
                   <p className="text-lg md:text-xl text-gray-400 font-medium leading-relaxed max-w-md">
-                    Just upload a screenshot of the story and ChatDate will give you 3 creative, specific message options for her.
+                    Learn how to create emotional spikes that make any woman addicted to you in less than 5 minutes - even if you're shy, ugly or broke.
                   </p>
 
                   <div className="pt-4">
@@ -116,7 +111,7 @@ export default function App() {
                       onClick={handleButtonClick}
                       className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full text-white font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] active:scale-95"
                     >
-                      <span>Try It Now</span>
+                      <span>Master The Method Now</span>
                       <Upload className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" />
                     </button>
                   </div>

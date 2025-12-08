@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Layers, Trophy } from 'lucide-react';
 
@@ -40,7 +39,7 @@ export const BioGeneratorSection: React.FC<BioGeneratorSectionProps> = ({ onCtaC
             onClick={onCtaClick}
             className="group relative inline-flex items-center gap-2 px-10 py-4 bg-[#1786FF] hover:bg-blue-600 rounded-full text-white font-bold text-lg transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(23,134,255,0.5)] hover:-translate-y-1 active:translate-y-0 active:scale-95"
           >
-            Try It Now
+            Master The Method Now
           </button>
         </div>
 
