@@ -138,7 +138,7 @@ export default function App() {
                   <div className="relative w-full rounded-[2rem] overflow-hidden shadow-2xl z-0 bg-[#0F0F0F] border border-gray-800">
                     <div className="relative w-full aspect-square">
                       <img 
-                        src="images/tenor2.gif" 
+                        src="https://c.tenor.com/rt23AR7cgwUAAAAd/tenor.gif" 
                         alt="Sabrina Carpenter Flirting GIF" 
                         className="w-full h-full object-cover opacity-90"
                       />

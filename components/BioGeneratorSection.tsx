@@ -45,6 +45,7 @@ export const BioGeneratorSection: React.FC<BioGeneratorSectionProps> = ({ onCtaC
 
         {/* Visual Representation of Teasing */}
         <div className="w-full max-w-md mx-auto relative">
+           
            <img 
              src="https://i.ibb.co/Df7VcDVp/webp.webp" 
              alt="Teasing Example" 
