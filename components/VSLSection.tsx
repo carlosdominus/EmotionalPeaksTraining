@@ -71,10 +71,6 @@ export const VSLSection: React.FC = () => {
 
         var showHiddenElements = function () {
             elsDisplayed = true;
-            // Removed direct 'block' style setting to avoid breaking flex/grid layouts
-            // Instead we can remove the class or set visibility.
-            // However, sticking to the provided script logic which uses display="block", 
-            // but since we are using 'esconder' on wrapper divs that are block-level, this is safe.
             elsHidden.forEach((e) => e.style.display = "block");
             StorageHandler.set(alreadyDisplayedKey, true);
         };
@@ -106,7 +102,7 @@ export const VSLSection: React.FC = () => {
   }, []); 
 
   return (
-    <div className="w-full mb-10 relative z-20">
+    <div className="w-full mb-10 relative z-20 min-h-[200px]">
       <div ref={containerRef} className="w-full" />
     </div>
   );
