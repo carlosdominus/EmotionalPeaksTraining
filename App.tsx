@@ -11,6 +11,7 @@ import { ConversationThermometerSection } from './components/ConversationThermom
 import { ApproachModeSection } from './components/ApproachModeSection';
 import { ProfileAnalysisSection } from './components/ProfileAnalysisSection';
 import { FeaturesGridSection } from './components/FeaturesGridSection';
+import { BonusSection } from './components/BonusSection';
 import { PricingSection } from './components/PricingSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
@@ -206,6 +207,9 @@ export default function App() {
 
           {/* FEATURES GRID SECTION */}
           <FeaturesGridSection />
+
+          {/* BONUS SECTION */}
+          <BonusSection onCtaClick={handleButtonClick} />
 
           {/* PRICING SECTION */}
           <PricingSection />
