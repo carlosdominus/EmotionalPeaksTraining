@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Target, MessageCircle } from 'lucide-react';
 
@@ -46,34 +45,12 @@ export const BioGeneratorSection: React.FC<BioGeneratorSectionProps> = ({ onCtaC
 
         {/* Visual Representation of Teasing */}
         <div className="w-full max-w-md mx-auto relative">
-           {/* Message Container */}
-           <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(29,46,92,0.15)] border border-slate-100 p-6 md:p-8 relative z-10">
-              <div className="space-y-6">
-                  {/* User Message */}
-                  <div className="flex items-end justify-end gap-2">
-                      <div className="bg-blue-600 text-white p-4 rounded-2xl rounded-br-sm shadow-md max-w-[85%]">
-                          <p className="font-medium">Oh, you're new here huh? Don't worry, you just found yourself a tour guide 😏</p>
-                      </div>
-                  </div>
-
-                  {/* Reaction/Reply */}
-                  <div className="flex items-end justify-start gap-3">
-                      <img 
-                        src="https://c.tenor.com/r-acShkJxuoAAAAd/tenor.gif" 
-                        alt="Profile" 
-                        className="w-8 h-8 rounded-full object-cover border border-pink-100"
-                      />
-                      <div className="space-y-1 max-w-[85%]">
-                          <div className="bg-gray-100 text-slate-800 p-4 rounded-2xl rounded-bl-sm shadow-sm">
-                              <p className="font-medium">Hahaha you wish! 🤣</p>
-                          </div>
-                          <div className="bg-gray-100 text-slate-800 p-4 rounded-2xl rounded-bl-sm shadow-sm">
-                              <p className="font-medium">But I might take you up on that offer...</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-           </div>
+           
+           <img 
+             src="https://i.ibb.co/Df7VcDVp/webp.webp" 
+             alt="Teasing Example" 
+             className="w-full h-auto rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(29,46,92,0.15)] border border-slate-100 relative z-10"
+           />
 
            {/* Decorative elements */}
            <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 hidden md:block animate-float-delayed">
