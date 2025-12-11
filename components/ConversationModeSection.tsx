@@ -42,11 +42,46 @@ export const ConversationModeSection: React.FC<ConversationModeSectionProps> = (
 
         {/* Visual Composition */}
         <div className="relative w-full max-w-[400px] mx-auto flex flex-col items-center">
-             <img 
-               src="https://i.ibb.co/pj7Q7d3h/webp2.webp" 
-               alt="Flirting Example" 
-               className="w-full h-auto rounded-[2rem] border border-gray-800 shadow-2xl"
-             />
+             <div className="relative w-full bg-gray-900 rounded-[2rem] border border-gray-800 shadow-2xl overflow-hidden">
+                {/* Chat Header */}
+                <div className="bg-gray-800/50 p-4 border-b border-gray-700 flex items-center gap-3">
+                   <img 
+                      src="https://c.tenor.com/e1Csmb03eysAAAAd/tenor.gif" 
+                      alt="Profile" 
+                      className="w-10 h-10 rounded-full object-cover"
+                   />
+                   <div>
+                      <div className="h-2.5 w-24 bg-gray-700 rounded-full mb-1"></div>
+                      <div className="h-2 w-16 bg-gray-700/50 rounded-full"></div>
+                   </div>
+                </div>
+
+                {/* Chat Area */}
+                <div className="p-6 space-y-6 bg-[#0B0C10] h-[400px] relative">
+                   {/* User Message */}
+                   <div className="flex justify-end">
+                      <div className="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-sm max-w-[85%] shadow-lg">
+                         <p className="text-sm leading-relaxed">I thought you were really beautiful, I had to come over here and say hi</p>
+                      </div>
+                   </div>
+
+                   {/* Her Response (Animated/Delayed appearance simulation) */}
+                   <div className="flex justify-start">
+                      <div className="bg-gray-800 text-gray-200 p-4 rounded-2xl rounded-tl-sm max-w-[85%] shadow-lg animate-fade-in-up">
+                         <p className="text-sm leading-relaxed">Omg that's so sweet 🙈 you definitely made my day!</p>
+                      </div>
+                   </div>
+                   
+                   <div className="flex justify-start">
+                       <div className="bg-gray-800 text-gray-200 p-4 rounded-2xl rounded-tl-sm max-w-[85%] shadow-lg animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+                          <p className="text-sm leading-relaxed">What's your name? 😊</p>
+                       </div>
+                   </div>
+
+                   {/* Background Elements inside phone */}
+                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none"></div>
+                </div>
+             </div>
              
              {/* Floating Badge */}
              <div className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl shadow-xl hidden md:block animate-float">
