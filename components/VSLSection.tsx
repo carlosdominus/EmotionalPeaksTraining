@@ -1,33 +1,20 @@
-import React, { useEffect, useRef, memo } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-interface VSLSectionProps {
-  onComplete?: () => void;
+// Declare smartplayer as any to access the global variable injected by the script
+declare global {
+  interface Window {
+    smartplayer: any;
+  }
 }
 
-const VSLSectionComponent: React.FC<VSLSectionProps> = ({ onComplete }) => {
+export const VSLSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const onCompleteRef = useRef(onComplete);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  // Keep callback ref updated
-  useEffect(() => {
-    onCompleteRef.current = onComplete;
-  }, [onComplete]);
 
   useEffect(() => {
-    // 1. Settings
-    const SECONDS_TO_DISPLAY = 60;
-    const STORAGE_KEY = `alreadyElsDisplayed${SECONDS_TO_DISPLAY}`;
-    const alreadyDisplayed = localStorage.getItem(STORAGE_KEY);
-    const PLAYER_ID = 'ab-691b9271d84e2d824a092e43';
+    const scriptUrl = "https://scripts.converteai.net/853c4f04-8442-44da-b89d-0541d78036bb/players/693a4826b14056e2ac8d39e1/v4/player.js";
+    const playerId = "vid-693a4826b14056e2ac8d39e1";
 
-    // If previously watched, show content immediately
-    if (alreadyDisplayed) {
-      if (onCompleteRef.current) onCompleteRef.current();
-    }
-
-    // 2. Load Player Script (Idempotent)
-    const scriptUrl = "https://scripts.converteai.net/853c4f04-8442-44da-b89d-0541d78036bb/ab-test/691b9271d84e2d824a092e43/player.js";
+    // 1. Load Script (Idempotent)
     if (!document.querySelector(`script[src="${scriptUrl}"]`)) {
       const s = document.createElement("script");
       s.src = scriptUrl;
@@ -35,71 +22,92 @@ const VSLSectionComponent: React.FC<VSLSectionProps> = ({ onComplete }) => {
       document.head.appendChild(s);
     }
 
-    // 3. Manual DOM Mounting (Idempotent check prevents duplicates)
-    if (containerRef.current) {
-        // Only append if it doesn't already exist.
-        // This prevents the "Circular structure" error caused by duplicate custom elements in StrictMode
-        // and allows us to remove the aggressive cleanup that was deleting the video.
-        if (!containerRef.current.querySelector('vturb-smartplayer')) {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'vsl-wrapper w-full';
-            
-            const player = document.createElement('vturb-smartplayer');
-            player.setAttribute('id', PLAYER_ID);
-            player.className = 'block w-full mx-auto';
-            
-            wrapper.appendChild(player);
-            containerRef.current.appendChild(wrapper);
-        }
+    // 2. Mount Player (Idempotent)
+    if (containerRef.current && !containerRef.current.querySelector(`#${playerId}`)) {
+        const player = document.createElement('vturb-smartplayer');
+        player.id = playerId;
+        // Styles from prompt
+        player.style.display = 'block';
+        player.style.margin = '0 auto';
+        player.style.width = '100%';
+        player.style.maxWidth = '400px';
+        
+        containerRef.current.appendChild(player);
     }
 
-    // 4. Timer / Progress Monitor
-    // Clear any existing interval to be safe
-    if (intervalRef.current) clearInterval(intervalRef.current);
+    // 3. VSL Delay Logic
+    const runDelayLogic = () => {
+        /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+        var SECONDS_TO_DISPLAY = 1410;
+        var CLASS_TO_DISPLAY = ".esconder";
+        /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+        var EXPIRATION_DAYS = 14;
+        var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+        var elsHidden = document.querySelectorAll<HTMLElement>(CLASS_TO_DISPLAY);
+        var elsDisplayed = false;
+        var attempts = 0;
 
-    intervalRef.current = setInterval(() => {
-        try {
-            const smartplayer = (window as any).smartplayer;
-            if (smartplayer && smartplayer.instances && smartplayer.instances[0]) {
-                const instance = smartplayer.instances[0];
-                
-                // Check time
-                if (instance.video.currentTime > SECONDS_TO_DISPLAY) {
-                    localStorage.setItem(STORAGE_KEY, "true");
-                    if (onCompleteRef.current) onCompleteRef.current();
-                    
-                    // Stop checking once target reached
-                    if (intervalRef.current) {
-                        clearInterval(intervalRef.current);
-                        intervalRef.current = null;
-                    }
-                }
+        class StorageHandler {
+            static expiryTime = EXPIRATION_DAYS * 86400000;
+            static set(key: string, value: any) {
+                localStorage.setItem(
+                    key,
+                    JSON.stringify({ value, expiry: Date.now() + this.expiryTime })
+                );
             }
-        } catch (e) {
-            // Ignore errors
+            static get(key: string) {
+                var item = localStorage.getItem(key);
+                if (!item) return null;
+                var { value, expiry } = JSON.parse(item);
+                if (Date.now() > expiry) {
+                    localStorage.removeItem(key);
+                    return null;
+                }
+                return value;
+            }
         }
-    }, 1000);
 
-    return () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
+        var alreadyElsDisplayed = StorageHandler.get(alreadyDisplayedKey);
+
+        var showHiddenElements = function () {
+            elsDisplayed = true;
+            // Removed direct 'block' style setting to avoid breaking flex/grid layouts
+            // Instead we can remove the class or set visibility.
+            // However, sticking to the provided script logic which uses display="block", 
+            // but since we are using 'esconder' on wrapper divs that are block-level, this is safe.
+            elsHidden.forEach((e) => e.style.display = "block");
+            StorageHandler.set(alreadyDisplayedKey, true);
+        };
+
+        var startWatchVideoProgress = function () {
+            // Check for window.smartplayer global variable
+            const sp = (window as any).smartplayer;
+            if (typeof sp === 'undefined' || !(sp.instances && sp.instances.length)) {
+                if (attempts >= 10) return;
+                attempts++;
+                return setTimeout(startWatchVideoProgress, 1000);
+            }
+            sp.instances[0].on('timeupdate', () => {
+                if (elsDisplayed || sp.instances[0].smartAutoPlay) return;
+                if (sp.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+                showHiddenElements();
+            });
+        };
+
+        if (alreadyElsDisplayed) {
+            setTimeout(showHiddenElements, 100);
+        } else {
+            startWatchVideoProgress();
         }
-        // Removed containerRef.current.innerHTML = '' to prevent video from disappearing.
-        // The check in step 3 prevents duplicates, so we don't need to destroy the DOM here.
     };
+
+    runDelayLogic();
+
   }, []); 
 
   return (
-    <section className="relative w-full pt-8 pb-4 z-50">
-      <div className="max-w-[1000px] mx-auto px-4 sm:px-6">
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_0_40px_-10px_rgba(37,99,235,0.3)] border border-white/10 bg-black/50 backdrop-blur-sm">
-          {/* React leaves this div alone after initial render due to memo */}
-          <div ref={containerRef} className="w-full min-h-[200px]" />
-        </div>
-      </div>
-    </section>
+    <div className="w-full mb-10 relative z-20">
+      <div ref={containerRef} className="w-full" />
+    </div>
   );
 };
-
-// IMPORTANT: deeply memoize to prevent any re-renders from parent updates
-export const VSLSection = memo(VSLSectionComponent, () => true);
