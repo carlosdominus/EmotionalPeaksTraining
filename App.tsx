@@ -93,11 +93,9 @@ export default function App() {
             {/* Wrapper for Delayed Content (Hero Text + Mockup) */}
             <div className="esconder">
               
-              {/* Header Logo - Moved below VSL */}
+              {/* Header Logo - Removed as requested */}
               <div className="flex justify-center mb-8 animate-fade-in-down">
-                <div className="flex items-center space-x-3">
-                  <span className="font-bold text-gray-200 tracking-tight text-xl">Emotional Spikes Method</span>
-                </div>
+                {/* Spacer if needed or just empty */}
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

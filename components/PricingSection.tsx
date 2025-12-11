@@ -77,7 +77,6 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                 <div className="flex items-baseline justify-center gap-1 mb-6 text-white">
                   <span className="text-2xl font-bold text-white">$</span>
                   <span className="text-6xl font-bold text-white tracking-tighter">27</span>
-                  <span className="text-lg font-medium text-gray-400">/year</span>
                 </div>
 
                 {/* Button */}

@@ -38,7 +38,7 @@ export const VSLSection: React.FC = () => {
     // 3. VSL Delay Logic
     const runDelayLogic = () => {
         /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-        var SECONDS_TO_DISPLAY = 0;
+        var SECONDS_TO_DISPLAY = 1;
         var CLASS_TO_DISPLAY = ".esconder";
         /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
         var EXPIRATION_DAYS = 14;

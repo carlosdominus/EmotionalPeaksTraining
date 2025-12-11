@@ -20,11 +20,11 @@ export const Footer = () => {
             © {new Date().getFullYear()} Emotional Spikes Method. All rights reserved.
           </div>
 
-          {/* Links */}
+          {/* Links - Now just visual text */}
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-500 hover:text-blue-400 text-sm font-medium transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-blue-400 text-sm font-medium transition-colors">Terms of Service</a>
-            <a href="mailto:support@chatdate.ai" className="text-gray-500 hover:text-blue-400 text-sm font-medium transition-colors">Contact</a>
+            <span className="text-gray-500 text-sm font-medium cursor-default">Privacy Policy</span>
+            <span className="text-gray-500 text-sm font-medium cursor-default">Terms of Service</span>
+            <span className="text-gray-500 text-sm font-medium cursor-default">Contact</span>
           </div>
 
         </div>
