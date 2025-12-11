@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Clock, AlertTriangle } from 'lucide-react';
 
@@ -55,7 +54,7 @@ export const ProfileAnalysisSection: React.FC<ProfileAnalysisSectionProps> = ({ 
             <div className="relative rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-2xl">
                 {/* Thumbnail GIF */}
                 <img 
-                  src="https://c.tenor.com/Z28js5TTM2UAAAAd/tenor.gif" 
+                  src="images/tenor.gif" 
                   alt="Real approach interaction" 
                   className="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                 />

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Thermometer } from 'lucide-react';
 
@@ -51,7 +50,7 @@ export const ConversationThermometerSection: React.FC<ConversationThermometerSec
            {/* Image Container */}
            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900 aspect-[4/3] md:aspect-[16/9]">
               <img 
-                 src="https://c.tenor.com/NDtgQabmRjEAAAAd/tenor.gif" 
+                 src="images/tenor1.gif" 
                  alt="Woman showing attraction signals" 
                  className="w-full h-full object-cover opacity-90"
               />
